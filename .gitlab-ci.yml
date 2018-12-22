@@ -16,6 +16,6 @@ pages:
     - mv dist public
   artifacts:
     paths:
-      - dist 
+      - public 
   only:
     - master # this job will affect only the 'master' branch
