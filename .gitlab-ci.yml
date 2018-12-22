@@ -13,8 +13,9 @@ pages:
   stage: deploy
   script:
     - yarn run generate
+    - mv dist public
   artifacts:
     paths:
-      - public 
+      - dist 
   only:
     - master # this job will affect only the 'master' branch
