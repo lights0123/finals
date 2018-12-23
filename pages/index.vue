@@ -1,63 +1,31 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">finals</h1>
-      <h2 class="subtitle">Study for Finals</h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
+    <el-container>
+      <el-header>
+        <h1>Select A Course</h1>
+      </el-header>
+      <el-main>
+        <el-row>
+          <el-col v-for="course in courses" :key="course.url" :xl="24 / 4" :lg="24 / 4" :md="24 / 4" :sm="24 / 2" :xs="24">
+            <div class="grid-content"><el-button class="button" @click="$router.push(`/study/${course.url}`)">{{course.name}}</el-button></div>
+          </el-col>
+        </el-row>
+      </el-main>
+    </el-container>
   </section>
 </template>
 
 <script lang="ts">
-import Logo from '~/components/Logo.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component({
-  components: {
-	Logo,
-  },
-})
-export default class Home extends Vue {}
+@Component
+export default class Index extends Vue {
+	public courses = [{ name: 'Physical Science', url: 'physical-science' }];
+}
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style scoped>
+.grid-content >>> button {
+    width: 100%;
 }
 </style>
