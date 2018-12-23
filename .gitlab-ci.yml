@@ -13,7 +13,6 @@ pages:
   stage: deploy
   script:
     - yarn run generate
-    - mv dist public
   artifacts:
     paths:
       - public 

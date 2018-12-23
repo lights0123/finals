@@ -59,6 +59,6 @@ module.exports = {
 	},
 
 	generate: {
-		subFolders: false,
+		dir: 'public'
 	}
 };
