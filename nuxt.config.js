@@ -50,12 +50,12 @@ module.exports = {
   ** Build configuration
   */
 	build: {
-		/*
-    ** You can extend webpack config here
-    */
-		extend(config, ctx) {
-
-		},
+		extend(config, { isClient }) {
+			// Extend only webpack config for client-bundle
+			if (isClient && process.env.NODE_ENV !== 'production') {
+				config.devtool = '#source-map'
+			}
+		}
 	},
 
 	generate: {

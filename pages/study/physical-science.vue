@@ -53,13 +53,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-
-interface Unit {
-	num: number;
-	name: string;
-	topics: Array<{ name: string; id: string }>;
-	enabledTopics: string[];
-}
+import { Unit } from '~/components/Unit.ts';
 
 @Component
 export default class Physci extends Vue {
