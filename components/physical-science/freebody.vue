@@ -44,6 +44,9 @@
 					</el-form-item>
 				</el-form>
 				<answer-correct :correct="correct" :incorrect="incorrect"/>
+				<br>
+				<br>
+				<el-button @click="$emit('skip')" size="mini">Skip</el-button>
 			</el-main>
 		</el-container>
 	</section>

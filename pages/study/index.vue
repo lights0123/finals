@@ -1,6 +1,6 @@
 <template>
 	<transition name="fade">
-		<component v-if="currentComponent" :is="currentComponent" @success="success" :key="uniq"/>
+		<component v-if="currentComponent" :is="currentComponent" @success="success" @skip="skip" :key="uniq"/>
 	</transition>
 </template>
 
@@ -30,16 +30,20 @@ const units = {
 	layout: 'study',
 })
 export default class Study extends Vue {
-	public currentComponent?: VueComponent = freebody;
+	public currentComponent?: VueComponent;
 	public uniq = 0;
 
 	public success() {
 		this.updateComponent();
 	}
 
+	public skip() {
+		this.updateComponent();
+	}
+
 	public updateComponent() {
 		this.uniq++;
-		// this.currentComponent = sample(this.validTopics);
+		this.currentComponent = sample(this.validTopics);
 	}
 
 	public beforeMount() {

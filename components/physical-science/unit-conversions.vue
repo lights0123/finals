@@ -19,14 +19,10 @@
 						<el-button type="primary" @click="submit">Submit</el-button>
 					</el-form-item>
 				</el-form>
-				<transition name="fade" mode="out-in">
-					<span class="correct" v-if="correct" key="correct">
-						<i class="el-icon-check"/> Correct!
-					</span>
-					<span class="incorrect" v-else-if="incorrect" key="incorrect">
-						<i class="el-icon-close"/> Incorrect
-					</span>
-				</transition>
+				<answer-correct :correct="correct" :incorrect="incorrect"/>
+				<br>
+				<br>
+				<el-button @click="$emit('skip')" size="mini">Skip</el-button>
 			</el-main>
 		</el-container>
 	</section>
@@ -37,9 +33,14 @@ import { Component, Vue, Emit } from 'vue-property-decorator';
 import math from 'mathjs';
 import { Significant } from '~/components/Math';
 import sampleSize from 'lodash/sampleSize';
+import answerCorrect from '~/components/answer-correct.vue';
 const conversions = [['km', 'm', 'cm', 'ft', 'in'], ['kg', 'g', 'mg', 'lbs']];
 
-@Component
+@Component({
+	components: {
+		answerCorrect,
+	},
+})
 export default class UnitConversions extends Vue {
 	public input: {data?: string|null} = {
 		data: null,
