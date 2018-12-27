@@ -55,15 +55,16 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Unit } from '~/components/Unit.ts';
 
-@Component
+@Component({
+	layout: 'study',
+})
 export default class Physci extends Vue {
 	public units: Unit[] = [
 		{
 			num: 1,
 			name: 'Introduction to Measurement and Nature of Science',
 			topics: [
-				{ name: 'Unit Conversions', id: 'unitconv' },
-				{ name: 'Significant Figures', id: 'sigfigs' },
+				{ name: 'Unit Conversions & Sig Figs', id: 'unitconv' },
 			],
 			enabledTopics: [],
 		},
@@ -71,12 +72,12 @@ export default class Physci extends Vue {
 			num: 2,
 			name: 'Kinematics',
 			topics: [
-				{ name: 'Distance, Time, & Velocity', id: 'disttimevel' },
-				{ name: 'Acceleration', id: 'accel' },
+				{ name: 'Distance, Time, & Velocity', id: 'disttimevel' },	// TODO
+				{ name: 'Acceleration', id: 'accel' },						// TODO
 				{ name: 'Position-Time Graphs', id: 'postime' },
 				{ name: 'Velocity-Time Graphs', id: 'veltime' },
-				{ name: 'Freefall', id: 'freefall' },
-				{ name: 'Projectile Motion', id: 'projmotion' },
+				{ name: 'Freefall', id: 'freefall' },						// TODO
+				{ name: 'Projectile Motion', id: 'projmotion' },			// TODO
 			],
 			enabledTopics: [],
 		},
@@ -84,10 +85,10 @@ export default class Physci extends Vue {
 			num: 3,
 			name: 'Forces In Motion',
 			topics: [
-				{ name: 'Free Body Diagrams', id: 'bodydiag' },
-				{ name: 'Momentum', id: 'momentum' },
-				{ name: 'Impulse', id: 'impulse' },
-				{ name: 'Law of Gravitation', id: 'grav' },
+				{ name: 'Free Body Diagrams', id: 'freebody' },
+				{ name: 'Momentum', id: 'momentum' },						// TODO
+				{ name: 'Impulse', id: 'impulse' },							// TODO
+				{ name: 'Law of Gravitation', id: 'grav' },					// TODO
 			],
 			enabledTopics: [],
 		},
@@ -95,10 +96,10 @@ export default class Physci extends Vue {
 			num: 4,
 			name: 'Work, Power, and Conservation of Energy',
 			topics: [
-				{ name: 'Kinetic Energy', id: 'kinetic' },
-				{ name: 'Potential Energy', id: 'potential' },
-				{ name: 'Work', id: 'work' },
-				{ name: 'Power', id: 'power' },
+				{ name: 'Kinetic Energy', id: 'kinetic' },					// TODO
+				{ name: 'Potential Energy', id: 'potential' },				// TODO
+				{ name: 'Work', id: 'work' },								// TODO
+				{ name: 'Power', id: 'power' },								// TODO
 			],
 			enabledTopics: [],
 		},
@@ -106,9 +107,9 @@ export default class Physci extends Vue {
 			num: 5,
 			name: 'Electricity',
 			topics: [
-				{ name: `Ohm's Law`, id: 'ohmlaw' },
-				{ name: 'Parallel Circuits', id: 'parallel' },
-				{ name: 'Series Circuits', id: 'series' },
+				{ name: `Ohm's Law`, id: 'ohmlaw' },						// TODO
+				{ name: 'Parallel Circuits', id: 'parallel' },				// TODO
+				{ name: 'Series Circuits', id: 'series' },					// TODO
 			],
 			enabledTopics: [],
 		},
@@ -116,8 +117,8 @@ export default class Physci extends Vue {
 			num: 6,
 			name: 'Thermal Energy',
 			topics: [
-				{ name: 'Temperature Change (Q=mcΔT)', id: 'tempchange' },
-				{ name: 'Phase Change (Q=mL)', id: 'phasechange' },
+				{ name: 'Temperature Change (Q=mcΔT)', id: 'tempchange' },	// TODO
+				{ name: 'Phase Change (Q=mL)', id: 'phasechange' },			// TODO
 			],
 			enabledTopics: [],
 		},

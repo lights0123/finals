@@ -41,7 +41,7 @@ const conversions = [['km', 'm', 'cm', 'ft', 'in'], ['kg', 'g', 'mg', 'lbs']];
 
 @Component
 export default class UnitConversions extends Vue {
-	public input: {data?: number|null} = {
+	public input: {data?: string|null} = {
 		data: null,
 	};
 	public num = '';
