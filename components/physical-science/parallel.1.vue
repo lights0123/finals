@@ -5,21 +5,6 @@
 				<h1>What is the motion of the object?</h1>
 			</el-header>
 			<el-main class="main">
-				<div class="diagram">
-					<div class="arrow down">
-						<img src="~/assets/arrow_90.svg">
-					</div>
-					<div
-						v-for="(amt, dir) in shownFigure"
-						:key="dir"
-						:class="['arrow', dir]"
-						:style="style(dir, amt)"
-					>
-						<img v-if="dir === 'left' || dir === 'right'" src="~/assets/arrow.svg">
-						<img v-else src="~/assets/arrow_90.svg">
-					</div>
-					<div class="body" />
-				</div>
 				<el-form @submit.native.prevent="submit">
 					<br>
 					<span>Select one from each group.</span>
@@ -149,72 +134,5 @@ export default class VelTime2 extends Vue {
 
 .radio .radioItem:not(:last-child) {
 	margin-bottom: 5px;
-}
-
-.diagram {
-	display: grid;
-	grid-template-columns: auto 50px auto;
-	grid-template-rows: auto 50px auto;
-}
-.arrow {
-	background-repeat: no-repeat;
-}
-.arrow.up,
-.arrow.down {
-	width: 30px;
-	grid-column: 2;
-	margin-left: auto;
-	margin-right: auto;
-	background-image: url("../../assets/arrow_90.svg");
-	background-size: 30px auto;
-}
-.arrow img {
-	visibility: hidden;
-	display: block;
-}
-.arrow.down img,
-.arrow.up img {
-	width: 30px;
-}
-.arrow.left img,
-.arrow.right img {
-	height: 30px;
-}
-.arrow.up {
-	grid-row: 1;
-}
-
-.arrow.down {
-	background-image: url("../../assets/arrow_90.svg");
-	transform: scaleY(-1);
-	grid-row: 3;
-}
-
-.arrow.left,
-.arrow.right {
-	background-image: url("../../assets/arrow.svg");
-	height: 30px;
-	grid-row: 2;
-	margin-top: auto;
-	margin-bottom: auto;
-	background-size: auto 30px;
-}
-
-.arrow.left {
-	transform: scaleX(-1);
-	grid-column: 1;
-}
-
-.arrow.right {
-	grid-column: 3;
-}
-
-.body {
-	width: 50px;
-	height: 50px;
-	border-style: solid;
-	border-width: 1px;
-	grid-column: 2;
-	grid-row: 2;
 }
 </style>

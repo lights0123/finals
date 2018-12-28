@@ -1,10 +1,10 @@
 <template>
 	<transition name="fade" mode="out-in">
-		<span class="correct" v-if="correct" key="correct">
-			<i class="el-icon-check"/> Correct!
+		<span v-if="correct" key="correct" class="correct">
+			<i class="el-icon-check" /> Correct!
 		</span>
-		<span class="incorrect" v-else-if="incorrect" key="incorrect">
-			<i class="el-icon-close"/> Incorrect
+		<span v-else-if="incorrect" key="incorrect" class="incorrect">
+			<i class="el-icon-close" /> Incorrect
 		</span>
 	</transition>
 </template>

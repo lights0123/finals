@@ -5,14 +5,13 @@
 				<h1>What is the motion of the object?</h1>
 			</el-header>
 			<el-main class="main">
-				<ve-line
-					:data="chartData"
+				<ve-line :data="chartData"
 					:settings="chartSettings"
 					:animation="{ animationDuration: 0 }"
 					:legend-visible="false"
-				></ve-line>
+				/>
 				<el-form @submit.native.prevent="submit">
-					<el-radio-group class="radio" v-model="input">
+					<el-radio-group v-model="input" class="radio">
 						<el-radio class="radioItem" label="^+">The object is speeding up in the positive direction</el-radio>
 						<br>
 						<el-radio class="radioItem" label="^-">The object is speeding up in the negative direction</el-radio>
@@ -27,10 +26,10 @@
 						<el-button type="primary" @click="submit">Submit</el-button>
 					</el-form-item>
 				</el-form>
-				<answer-correct :correct="correct" :incorrect="incorrect"/>
+				<answer-correct :correct="correct" :incorrect="incorrect" />
 				<br>
 				<br>
-				<el-button @click="$emit('skip')" size="mini">Skip</el-button>
+				<el-button size="mini" @click="$emit('skip')">Skip</el-button>
 			</el-main>
 		</el-container>
 	</section>
@@ -50,8 +49,11 @@ import answerCorrect from '~/components/answer-correct.vue';
 })
 export default class PosTime2 extends Vue {
 	public input: string | null = null;
+
 	public correct = false;
+
 	public incorrect = false;
+
 	public chartSettings = {
 		xAxisType: 'value',
 		yAxisName: ['Position (m)'],
@@ -77,6 +79,7 @@ export default class PosTime2 extends Vue {
 			},
 		},
 	};
+
 	public get motion() {
 		if (random(2) === 0) {
 			let randomNum = random(-40, 40) / 2;
@@ -85,20 +88,21 @@ export default class PosTime2 extends Vue {
 				randomNum = 0;
 			}
 			return { a: 0, b: randomNum };
-		} else {
-			const randomNum = random(-6, 6) / 2;
-			return { a: randomNum, b: 0 };
 		}
+		const randomNum = random(-6, 6) / 2;
+		return { a: randomNum, b: 0 };
 	}
+
 	public get timeIncrement() {
 		return random(2, 6);
 	}
+
 	public get chartData() {
 		const rows: Array<{ time: number; position: number }> = [];
 		for (let i = 0; i < 6 * this.timeIncrement; i += this.timeIncrement) {
 			rows.push({
 				time: i,
-				position: this.motion.a * i ** 2 + this.motion.b * i,
+				position: this.motion.a * (i ** 2) + this.motion.b * i,
 			});
 		}
 		return {
@@ -106,13 +110,14 @@ export default class PosTime2 extends Vue {
 			rows,
 		};
 	}
+
 	public submit() {
 		if (
-			(this.input === '+' && this.motion.b > 0 && this.motion.a === 0) ||
-			(this.input === '-' && this.motion.b < 0 && this.motion.a === 0) ||
-			(this.input === '^+' && this.motion.a > 0 && this.motion.b === 0) ||
-			(this.input === '^-' && this.motion.a < 0 && this.motion.b === 0) ||
-			(this.input === '0' && this.motion.a === 0 && this.motion.b === 0)
+			(this.input === '+' && this.motion.b > 0 && this.motion.a === 0)
+			|| (this.input === '-' && this.motion.b < 0 && this.motion.a === 0)
+			|| (this.input === '^+' && this.motion.a > 0 && this.motion.b === 0)
+			|| (this.input === '^-' && this.motion.a < 0 && this.motion.b === 0)
+			|| (this.input === '0' && this.motion.a === 0 && this.motion.b === 0)
 		) {
 			this.correct = true;
 			this.incorrect = false;

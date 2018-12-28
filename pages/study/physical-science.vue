@@ -28,8 +28,11 @@
 									<el-checkbox
 										:indeterminate="unit.enabledTopics.length > 0 && unit.enabledTopics.length !== unit.topics.length"
 										:value="unit.enabledTopics.length === unit.topics.length"
-										@change="checked => checked ? unit.enabledTopics = unit.topics.map((topic) => topic.id) : unit.enabledTopics = []"
-									>Unit {{unit.num}} - {{unit.name}}</el-checkbox>
+										@change="checked => checked ? unit.enabledTopics = unit.topics.map((topic) => topic.id)
+											: unit.enabledTopics = []"
+									>
+										Unit {{ unit.num }} - {{ unit.name }}
+									</el-checkbox>
 								</div>
 								<el-checkbox-group v-model="unit.enabledTopics">
 									<div v-for="topic in unit.topics" :key="topic.id" class="text item">
@@ -45,7 +48,9 @@
 					class="alignright"
 					:disabled="selectedTopics.length === 0"
 					@click="$router.push({ path: '/study', query: {topics: selectedTopics } })"
-				>{{selectedTopics.length === 0 ? `Select a topic first` : `Let's Go`}}</el-button>
+				>
+					{{ selectedTopics.length === 0 ? `Select a topic first` : `Let's Go` }}
+				</el-button>
 			</el-main>
 		</el-container>
 	</section>
@@ -53,6 +58,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+// eslint-disable-next-line no-unused-vars
 import { Unit } from '~/components/Unit.ts';
 
 @Component({
@@ -107,7 +113,7 @@ export default class Physci extends Vue {
 			num: 5,
 			name: 'Electricity',
 			topics: [
-				{ name: `Ohm's Law`, id: 'ohmlaw' },						// TODO
+				{ name: 'Ohm\'s Law', id: 'ohmlaw' },						// TODO
 				{ name: 'Parallel Circuits', id: 'parallel' },				// TODO
 				{ name: 'Series Circuits', id: 'series' },					// TODO
 			],
@@ -129,15 +135,17 @@ export default class Physci extends Vue {
 		// 	enabledTopics: [],
 		// },
 	];
+
 	public select(state: boolean) {
 		this.units.forEach((unit) => {
 			if (state) {
-				unit.enabledTopics = unit.topics.map((topic) => topic.id);
+				unit.enabledTopics = unit.topics.map(topic => topic.id);
 			} else {
 				unit.enabledTopics = [];
 			}
 		});
 	}
+
 	public get selectedTopics() {
 		const enabledTopics: string[] = [];
 		this.units.forEach((unit) => {

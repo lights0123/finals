@@ -2,10 +2,10 @@
 	<div>
 		<el-menu class="el-menu-demo" mode="horizontal" @select="$router.back()">
 			<el-menu-item index="1">
-				<i class="el-icon-back"/>
+				<i class="el-icon-back" />
 			</el-menu-item>
 		</el-menu>
-		<nuxt/>
+		<nuxt />
 	</div>
 </template>
 

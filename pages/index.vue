@@ -6,8 +6,17 @@
 			</el-header>
 			<el-main>
 				<el-row>
-					<el-col v-for="course in courses" :key="course.url" :xl="24 / 4" :lg="24 / 4" :md="24 / 4" :sm="24 / 2" :xs="24">
-						<div class="grid-content"><el-button class="button" @click="$router.push(`/study/${course.url}`)">{{course.name}}</el-button></div>
+					<el-col v-for="course in courses"
+						:key="course.url"
+						:xl="24 / 4"
+						:lg="24 / 4"
+						:md="24 / 4"
+						:sm="24 / 2"
+						:xs="24"
+					>
+						<div class="grid-content">
+							<el-button class="button" @click="$router.push(`/study/${course.url}`)">{{ course.name }}</el-button>
+						</div>
 					</el-col>
 				</el-row>
 			</el-main>

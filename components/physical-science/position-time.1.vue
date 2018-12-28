@@ -5,27 +5,30 @@
 				<h1>What is the velocity of the object?</h1>
 			</el-header>
 			<el-main class="main">
-				<ve-line
-					:data="chartData"
+				<ve-line :data="chartData"
 					:settings="chartSettings"
 					:animation="{ animationDuration: 0 }"
 					:legend-visible="false"
-				></ve-line>
+				/>
 				<el-form :model="input" :inline="true" @submit.native.prevent="submit">
-					<el-form-item prop="data" :rules="[
+					<el-form-item prop="data"
+						:rules="[
 							{ required: true, message: 'answer is required' },
 							{ validator: isNumber },
-    						]">
-						<el-input v-model="input.data" placeholder="Answer"><template slot="append">ᵐ⁄ₛ</template></el-input>
+						]"
+					>
+						<el-input v-model="input.data" placeholder="Answer">
+							<template slot="append">ᵐ⁄ₛ</template>
+						</el-input>
 					</el-form-item>
 					<el-form-item>
 						<el-button type="primary" @click="submit">Submit</el-button>
 					</el-form-item>
 				</el-form>
-				<answer-correct :correct="correct" :incorrect="incorrect"/>
+				<answer-correct :correct="correct" :incorrect="incorrect" />
 				<br>
 				<br>
-				<el-button @click="$emit('skip')" size="mini">Skip</el-button>
+				<el-button size="mini" @click="$emit('skip')">Skip</el-button>
 			</el-main>
 		</el-container>
 	</section>
@@ -47,8 +50,11 @@ export default class PosTime extends Vue {
 	public input: {data?: string|null} = {
 		data: null,
 	};
+
 	public correct = false;
+
 	public incorrect = false;
+
 	public chartSettings = {
 		xAxisType: 'value',
 		yAxisName: ['Position (m)'],
@@ -74,24 +80,28 @@ export default class PosTime extends Vue {
 			},
 		},
 	};
+
 	public get vel() {
 		let randomNum = random(1, 40) / 2;
-		if (randomNum === 1) {randomNum++; }
+		if (randomNum === 1) { randomNum++; }
 		return randomNum;
 	}
+
 	public get timeIncrement() {
 		return random(2, 6);
 	}
+
 	public get chartData() {
 		const rows: Array<{time: number, position: number}> = [];
 		for (let i = 0; i < 6 * this.timeIncrement; i += this.timeIncrement) {
-			rows.push({time: i, position: i * this.vel});
+			rows.push({ time: i, position: i * this.vel });
 		}
 		return {
 			columns: ['time', 'position'],
 			rows,
 		};
 	}
+
 	public submit() {
 		if (this.input.data && this.input.data.trim() === this.vel.toString()) {
 			this.correct = true;
@@ -102,9 +112,10 @@ export default class PosTime extends Vue {
 			this.incorrect = true;
 		}
 	}
+
 	public isNumber(rule, value, callback) {
 		const errors: string[] = [];
-		if (isNaN(Number(value))) {
+		if (Number.isNaN(Number(value))) {
 			errors.push('answer must be a number');
 		}
 		callback(errors);

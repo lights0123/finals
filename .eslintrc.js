@@ -33,6 +33,15 @@ module.exports = {
 		}],
 		'vue/component-name-in-template-casing': ['error', 'kebab-case'],
 		'max-len': ['error', 140],
-		'no-plusplus': 0
+		'no-plusplus': 0,
+		'class-methods-use-this': 0,
+		'vue/max-attributes-per-line': ['error', {
+			'singleline': 3,
+			'multiline': {
+				'max': 1,
+				'allowFirstLine': true
+			}
+		}],
+		'vue/singleline-html-element-content-newline': 0,
 	}
 };

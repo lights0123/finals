@@ -5,24 +5,26 @@
 				<h1>Convert</h1>
 			</el-header>
 			<el-main class="main">
-				<span v-show="num">Convert {{num}} {{from}} to {{to}}</span>
+				<span v-show="num">Convert {{ num }} {{ from }} to {{ to }}</span>
 				<br>
 				<br>
 				<el-form :model="input" :inline="true" @submit.native.prevent="submit">
-					<el-form-item prop="data" :rules="[
+					<el-form-item prop="data"
+						:rules="[
 							{ required: true, message: 'answer is required' },
 							{ validator: isNumber },
-    						]">
-						<el-input v-model="input.data" placeholder="Answer"></el-input>
+						]"
+					>
+						<el-input v-model="input.data" placeholder="Answer" />
 					</el-form-item>
 					<el-form-item>
 						<el-button type="primary" @click="submit">Submit</el-button>
 					</el-form-item>
 				</el-form>
-				<answer-correct :correct="correct" :incorrect="incorrect"/>
+				<answer-correct :correct="correct" :incorrect="incorrect" />
 				<br>
 				<br>
-				<el-button @click="$emit('skip')" size="mini">Skip</el-button>
+				<el-button size="mini" @click="$emit('skip')">Skip</el-button>
 			</el-main>
 		</el-container>
 	</section>
@@ -45,18 +47,22 @@ export default class UnitConversions extends Vue {
 	public input: {data?: string|null} = {
 		data: null,
 	};
+
 	public num = '';
+
 	public from = '';
+
 	public to = '';
+
 	public correct = false;
+
 	public incorrect = false;
 
 	public beforeMount() {
-		const type =
-			conversions[Math.floor(Math.random() * conversions.length)];
+		const type =			conversions[Math.floor(Math.random() * conversions.length)];
 		const random = +(Math.random() * 50).toFixed(2);
 		const [from, to] = sampleSize(type, 2);
-		this.num = '' + random;
+		this.num = `${random}`;
 		this.from = from;
 		this.to = to;
 	}
@@ -71,7 +77,7 @@ export default class UnitConversions extends Vue {
 				.eval(template)
 				.toNumeric();
 			const significant = new Significant(correctAnswer, sigfigs);
-			const answer = new Significant('' + this.input.data);
+			const answer = new Significant(`${this.input.data}`);
 			correct = significant.equals(answer);
 		} catch (e) {
 			/**/
@@ -87,11 +93,11 @@ export default class UnitConversions extends Vue {
 	}
 
 	@Emit()
-	public success() {/* */}
+	public success() { /* */ }
 
 	public isNumber(rule, value, callback) {
 		const errors: string[] = [];
-		if (isNaN(Number(value))) {
+		if (Number.isNaN(Number(value))) {
 			errors.push('answer must be a number');
 		}
 		callback(errors);
