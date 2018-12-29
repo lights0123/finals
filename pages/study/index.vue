@@ -2,7 +2,6 @@
 	<transition name="fade">
 		<component
 			:is="currentComponent"
-			v-if="currentComponent"
 			:key="uniq"
 			@success="success"
 			@skip="skip"
@@ -16,6 +15,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Component as VueComponent } from 'vue';
 import sample from 'lodash/sample';
 import 'mdn-polyfills/Array.prototype.includes';
+import empty from '~/components/empty.vue';
 import unit from '~/components/physical-science/unit-conversions.vue';
 import postime from '~/components/physical-science/position-time.1.vue';
 import postime2 from '~/components/physical-science/position-time.2.vue';
@@ -37,7 +37,7 @@ const units = {
 	layout: 'study',
 })
 export default class Study extends Vue {
-	public currentComponent: VueComponent | null = null;
+	public currentComponent: VueComponent = empty;
 
 	public uniq = 0;
 
