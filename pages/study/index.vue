@@ -37,7 +37,7 @@ const units = {
 	layout: 'study',
 })
 export default class Study extends Vue {
-	public currentComponent?: VueComponent;
+	public currentComponent: VueComponent | null = null;
 
 	public uniq = 0;
 
