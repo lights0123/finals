@@ -28,7 +28,7 @@ module.exports = {
   */
 	css: [
 		'element-ui/lib/theme-chalk/index.css',
-		'@/assets/main.css'
+		'@/assets/main.css',
 	],
 
 	/*
@@ -44,6 +44,12 @@ module.exports = {
 	modules: [
 		// '~/modules/typescript.js',
 		'nuxt-typescript',
+		['@nuxtjs/google-analytics', {
+			id: process.env.GA_ID || 'UA-000000-1',
+			debug: {
+				sendHitTask: process.env.GA_ID,
+			},
+		}],
 	],
 
 	/*
@@ -53,12 +59,12 @@ module.exports = {
 		extend(config, { isClient }) {
 			// Extend only webpack config for client-bundle
 			if (isClient && process.env.NODE_ENV !== 'production') {
-				config.devtool = '#source-map'
+				config.devtool = '#source-map';
 			}
-		}
+		},
 	},
 
 	generate: {
-		dir: 'public'
-	}
+		dir: 'public',
+	},
 };
