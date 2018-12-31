@@ -24,6 +24,8 @@ import postime from '~/components/physical-science/position-time.1.vue';
 import postime2 from '~/components/physical-science/position-time.2.vue';
 import veltime from '~/components/physical-science/velocity-time.1.vue';
 import veltime2 from '~/components/physical-science/velocity-time.2.vue';
+import freefall from '~/components/physical-science/freefall.1.vue';
+import freefall2 from '~/components/physical-science/freefall.2.vue';
 import freebody from '~/components/physical-science/freebody.vue';
 import parallel from '~/components/physical-science/parallel.1.vue';
 import tempchange from '~/components/physical-science/tempchange.vue';
@@ -35,6 +37,7 @@ const units = {
 	unit: [unit],
 	postime: [postime, postime2],
 	veltime: [veltime, veltime2],
+	freefall: [freefall2],
 	freebody: [freebody],
 	parallel: [parallel],
 	tempchange: [tempchange],

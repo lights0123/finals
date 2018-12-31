@@ -86,7 +86,7 @@ export default class Physci extends Vue {
 				{ name: 'Acceleration', id: 'accel' },						// TODO
 				{ name: 'Position-Time Graphs', id: 'postime' },
 				{ name: 'Velocity-Time Graphs', id: 'veltime' },
-				{ name: 'Freefall', id: 'freefall' },						// TODO
+				{ name: 'Freefall', id: 'freefall' },
 				{ name: 'Projectile Motion', id: 'projmotion' },			// TODO
 			],
 			enabledTopics: [],

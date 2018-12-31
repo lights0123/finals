@@ -4,13 +4,18 @@
 
 import math from 'mathjs';
 
+function trimNumeric(str: string) {
+	return str.replace(/^[\s0]+|\s+$/g, '');
+}
+
+// eslint-disable-next-line import/prefer-default-export
 export class Significant {
 	public static getSF(num: string) {
 		num = trimNumeric(num);
 		if (num.charAt(0) === '-') {
 			num = num.substring(1);
 		}
-		if (isNaN(Number(num))) {
+		if (Number.isNaN(Number(num))) {
 			throw new TypeError('not a number');
 		}
 		if (num.indexOf('.') === -1) {
@@ -52,8 +57,4 @@ export class Significant {
 		this.number = math.bignumber(this.number.toPrecision(sf));
 		this.sigfigs = sf;
 	}
-}
-
-function trimNumeric(str: string) {
-	return str.replace(/^[\s0]+|\s+$/g, '');
 }

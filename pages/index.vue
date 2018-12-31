@@ -100,7 +100,7 @@ import Icon from 'vue-awesome/components/Icon.vue';
 	},
 })
 export default class Index extends Vue {
-	public courses = [{ name: 'Physical Science', url: 'physical-science' }];
+	public courses = [{ name: 'Physical Science - Physics', url: 'physical-science' }];
 }
 </script>
 
