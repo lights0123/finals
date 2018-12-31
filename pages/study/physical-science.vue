@@ -1,3 +1,7 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
 <template>
 	<section class="container">
 		<el-container>
@@ -70,7 +74,7 @@ export default class Physci extends Vue {
 			num: 1,
 			name: 'Introduction to Measurement and Nature of Science',
 			topics: [
-				{ name: 'Unit Conversions & Sig Figs', id: 'unitconv' },
+				{ name: 'Unit Conversions & Sig Figs', id: 'unit' },
 			],
 			enabledTopics: [],
 		},
@@ -123,8 +127,9 @@ export default class Physci extends Vue {
 			num: 6,
 			name: 'Thermal Energy',
 			topics: [
-				{ name: 'Temperature Change (Q=mcΔT)', id: 'tempchange' },	// TODO
-				{ name: 'Phase Change (Q=mL)', id: 'phasechange' },			// TODO
+				{ name: 'Temperature Change (Q=mcΔT)', id: 'tempchange' },
+				{ name: 'Phase Change (Q=mL)', id: 'phasechange' },
+				{ name: 'Heating Curves', id: 'heatcurve' },
 			],
 			enabledTopics: [],
 		},

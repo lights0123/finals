@@ -1,3 +1,7 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
 <template>
 	<section class="container">
 		<el-container>
@@ -59,7 +63,7 @@ export default class UnitConversions extends Vue {
 	public incorrect = false;
 
 	public beforeMount() {
-		const type =			conversions[Math.floor(Math.random() * conversions.length)];
+		const type = conversions[Math.floor(Math.random() * conversions.length)];
 		const random = +(Math.random() * 50).toFixed(2);
 		const [from, to] = sampleSize(type, 2);
 		this.num = `${random}`;
@@ -108,23 +112,5 @@ export default class UnitConversions extends Vue {
 <style scoped>
 .main {
 	text-align: center;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.2s;
-}
-
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
-
-.correct {
-	color: #3ac254;
-}
-
-.incorrect {
-	color: #f56c6c;
 }
 </style>

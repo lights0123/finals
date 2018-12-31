@@ -44,5 +44,8 @@ module.exports = {
 		}],
 		'vue/singleline-html-element-content-newline': 0,
 		'strict': 0,
+		'lines-between-class-members': ["error", "always", { exceptAfterSingleLine: true }],
+		// Use 'typescript/no-unused-vars' instead
+		'no-unused-vars': 0,
 	}
 };

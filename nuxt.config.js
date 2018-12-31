@@ -47,7 +47,7 @@ module.exports = {
 		['@nuxtjs/google-analytics', {
 			id: process.env.GA_ID || 'UA-000000-1',
 			debug: {
-				sendHitTask: process.env.GA_ID,
+				sendHitTask: !!process.env.GA_ID,
 			},
 		}],
 	],

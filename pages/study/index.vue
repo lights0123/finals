@@ -1,3 +1,7 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
 <template>
 	<transition name="fade">
 		<component
@@ -23,14 +27,20 @@ import veltime from '~/components/physical-science/velocity-time.1.vue';
 import veltime2 from '~/components/physical-science/velocity-time.2.vue';
 import freebody from '~/components/physical-science/freebody.vue';
 import parallel from '~/components/physical-science/parallel.1.vue';
+import tempchange from '~/components/physical-science/tempchange.vue';
+import phasechange from '~/components/physical-science/phasechange.vue';
+import heatcurve from '~/components/physical-science/heatcurve.vue';
 import '~/plugins/types.ts';
 
 const units = {
-	unitconv: [unit],
+	unit: [unit],
 	postime: [postime, postime2],
 	veltime: [veltime, veltime2],
 	freebody: [freebody],
 	parallel: [parallel],
+	tempchange: [tempchange],
+	phasechange: [phasechange],
+	heatcurve: [heatcurve],
 };
 
 @Component({
@@ -51,7 +61,7 @@ export default class Study extends Vue {
 
 	public updateComponent() {
 		this.uniq++;
-		this.currentComponent = sample(this.validTopics);
+		this.currentComponent = sample(this.validTopics) || empty;
 	}
 
 	public beforeMount() {
