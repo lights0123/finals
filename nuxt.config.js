@@ -62,6 +62,7 @@ module.exports = {
 				config.devtool = '#source-map';
 			}
 		},
+		transpile: [/^vue-awesome/],
 	},
 
 	generate: {

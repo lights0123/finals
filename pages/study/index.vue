@@ -15,7 +15,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-// eslint-disable-next-line no-unused-vars
 import { Component as VueComponent } from 'vue';
 import sample from 'lodash/sample';
 import 'mdn-polyfills/Array.prototype.includes';
