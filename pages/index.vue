@@ -59,7 +59,7 @@
 						<li>
 							<a href="/LICENSE.txt" target="_blank">
 								<icon class="icon" name="regular/copyright" />
-								Copyright 2018 Ben Schattinger under the Mozilla Public License Version 2.0.
+								Copyright 2019 Ben Schattinger under the Mozilla Public License Version 2.0.
 							</a>
 						</li>
 						<li>
