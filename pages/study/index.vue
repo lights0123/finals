@@ -20,6 +20,7 @@ import sample from 'lodash/sample';
 import 'mdn-polyfills/Array.prototype.includes';
 import empty from '~/components/empty.vue';
 import unit from '~/components/physical-science/unit-conversions.vue';
+import accel from '~/components/physical-science/accel.vue';
 import postime from '~/components/physical-science/position-time.1.vue';
 import postime2 from '~/components/physical-science/position-time.2.vue';
 import veltime from '~/components/physical-science/velocity-time.1.vue';
@@ -36,6 +37,7 @@ import '~/plugins/types.ts';
 
 const units = {
 	unit: [unit],
+	accel: [accel],
 	postime: [postime, postime2],
 	veltime: [veltime, veltime2],
 	freefall: [freefall, freefall2],
