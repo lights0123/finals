@@ -17,7 +17,7 @@
 				<br>
 				<el-row class="row" type="flex">
 					<el-col
-						v-for="unit in units"
+						v-for="unit in implUnits"
 						:key="unit.num"
 						:xl="24 / 3"
 						:lg="24 / 3"
@@ -82,7 +82,7 @@ export default class Physci extends Vue {
 			num: 2,
 			name: 'Kinematics',
 			topics: [
-				{ name: 'Distance, Time, & Velocity', id: 'disttimevel' },	// TODO
+				// { name: 'Distance, Time, & Velocity', id: 'disttimevel' },
 				{ name: 'Acceleration', id: 'accel' },
 				{ name: 'Position-Time Graphs', id: 'postime' },
 				{ name: 'Velocity-Time Graphs', id: 'veltime' },
@@ -96,9 +96,9 @@ export default class Physci extends Vue {
 			name: 'Forces In Motion',
 			topics: [
 				{ name: 'Free Body Diagrams', id: 'freebody' },
-				{ name: 'Momentum', id: 'momentum' },						// TODO
-				{ name: 'Impulse', id: 'impulse' },							// TODO
-				{ name: 'Law of Gravitation', id: 'grav' },					// TODO
+				// { name: 'Momentum', id: 'momentum' },
+				// { name: 'Impulse', id: 'impulse' },
+				// { name: 'Law of Gravitation', id: 'grav' },
 			],
 			enabledTopics: [],
 		},
@@ -106,10 +106,10 @@ export default class Physci extends Vue {
 			num: 4,
 			name: 'Work, Power, and Conservation of Energy',
 			topics: [
-				{ name: 'Kinetic Energy', id: 'kinetic' },					// TODO
-				{ name: 'Potential Energy', id: 'potential' },				// TODO
-				{ name: 'Work', id: 'work' },								// TODO
-				{ name: 'Power', id: 'power' },								// TODO
+				// { name: 'Kinetic Energy', id: 'kinetic' },
+				// { name: 'Potential Energy', id: 'potential' },
+				// { name: 'Work', id: 'work' },
+				// { name: 'Power', id: 'power' },
 			],
 			enabledTopics: [],
 		},
@@ -117,9 +117,9 @@ export default class Physci extends Vue {
 			num: 5,
 			name: 'Electricity',
 			topics: [
-				{ name: 'Ohm\'s Law', id: 'ohmlaw' },						// TODO
-				{ name: 'Parallel Circuits', id: 'parallel' },				// TODO
-				{ name: 'Series Circuits', id: 'series' },					// TODO
+				// { name: 'Ohm\'s Law', id: 'ohmlaw' },
+				// { name: 'Parallel Circuits', id: 'parallel' },
+				// { name: 'Series Circuits', id: 'series' },
 			],
 			enabledTopics: [],
 		},
@@ -133,13 +133,17 @@ export default class Physci extends Vue {
 			],
 			enabledTopics: [],
 		},
-		// {
-		// 	num: 7,
-		// 	name: 'Waves, EMS, and Astronomy',
-		// 	topics: ['Temperature Change (Q=mcΔT)', 'Phase Change (Q=mL)'],
-		// 	enabledTopics: [],
-		// },
+		{
+			num: 7,
+			name: 'Waves, EMS, and Astronomy',
+			topics: [],
+			enabledTopics: [],
+		},
 	];
+
+	public get implUnits() {
+		return this.units.filter(unit => unit.topics.length > 0);
+	}
 
 	public select(state: boolean) {
 		this.units.forEach((unit) => {
