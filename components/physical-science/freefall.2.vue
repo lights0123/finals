@@ -67,7 +67,7 @@ import answerCorrect from '~/components/answer-correct.vue';
 		answerCorrect,
 	},
 })
-export default class FreeFall1 extends Vue {
+export default class FreeFall2 extends Vue {
 	public input: {time: string, vel: string} = {
 		time: '',
 		vel: '',

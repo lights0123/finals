@@ -37,7 +37,7 @@ const units = {
 	unit: [unit],
 	postime: [postime, postime2],
 	veltime: [veltime, veltime2],
-	freefall: [freefall2],
+	freefall: [freefall, freefall2],
 	freebody: [freebody],
 	parallel: [parallel],
 	tempchange: [tempchange],

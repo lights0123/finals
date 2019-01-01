@@ -5,7 +5,7 @@
 <template>
 	<div>
 		<el-menu class="el-menu-demo" mode="horizontal" @select="$router.back()">
-			<el-menu-item index="1">
+			<el-menu-item class="menu-item" index="1">
 				<i class="el-icon-back" />
 			</el-menu-item>
 		</el-menu>
@@ -38,5 +38,12 @@ html {
 *:after {
 	box-sizing: border-box;
 	margin: 0;
+}
+</style>
+
+<style scoped>
+.menu-item {
+	border-bottom-color: transparent !important;
+    color: #909399 !important;
 }
 </style>
