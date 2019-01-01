@@ -83,7 +83,7 @@ export default class Physci extends Vue {
 			name: 'Kinematics',
 			topics: [
 				{ name: 'Distance, Time, & Velocity', id: 'disttimevel' },	// TODO
-				{ name: 'Acceleration', id: 'accel' },						// TODO
+				{ name: 'Acceleration', id: 'accel' },
 				{ name: 'Position-Time Graphs', id: 'postime' },
 				{ name: 'Velocity-Time Graphs', id: 'veltime' },
 				{ name: 'Freefall', id: 'freefall' },

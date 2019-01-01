@@ -61,15 +61,17 @@ export default class FreeFall1 extends Vue {
 	public submit() {
 		const sigfigs = Significant.getSF(`${this.height}`);
 		const significant = new Significant(`${this.time}`, sigfigs);
-		const answer = new Significant(`${this.input.data}`);
-		if (significant.equals(answer)) {
-			this.correct = true;
-			this.incorrect = false;
-			setTimeout(() => this.success(), 1000);
-		} else {
-			this.correct = false;
-			this.incorrect = true;
-		}
+		try {
+			const answer = new Significant(`${this.input.data}`);
+			if (significant.equals(answer)) {
+				this.correct = true;
+				this.incorrect = false;
+				setTimeout(() => this.success(), 1000);
+			} else {
+				this.correct = false;
+				this.incorrect = true;
+			}
+		} catch (e) { /* */ }
 	}
 
 	public get height() {

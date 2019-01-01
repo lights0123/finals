@@ -221,14 +221,16 @@ export default class HeatCurve extends Vue {
 		energy += this.mcATTo(this.phases.phases[0], this.startTemperature, this.phases.direction === '+');
 		energy += this.mcATTo(this.phases.phases[this.phases.phases.length - 1], this.endTemperature, this.phases.direction === '-');
 		if (this.phases.direction === '-') energy = -energy;
-		if (new Significant(math.bignumber(energy), 4).equals(new Significant(this.input.data, 4))) {
-			this.correct = true;
-			this.incorrect = false;
-			setTimeout(() => this.success(), 1000);
-		} else {
-			this.correct = false;
-			this.incorrect = true;
-		}
+		try {
+			if (new Significant(math.bignumber(energy), 4).equals(new Significant(this.input.data, 4))) {
+				this.correct = true;
+				this.incorrect = false;
+				setTimeout(() => this.success(), 1000);
+			} else {
+				this.correct = false;
+				this.incorrect = true;
+			}
+		} catch (e) { /* */ }
 	}
 
 	public get phaseChanges() {
