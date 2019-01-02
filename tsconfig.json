@@ -3,14 +3,14 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "lib": [
       "dom",
       "es2015",
       "es2016.array.include",
       "es2017.object"
     ],
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "noImplicitAny": false,

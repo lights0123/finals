@@ -19,41 +19,35 @@ import { Component as VueComponent } from 'vue';
 import sample from 'lodash/sample';
 import 'mdn-polyfills/Array.prototype.includes';
 import empty from '~/components/empty.vue';
-import unit from '~/components/physical-science/unit-conversions.vue';
-import accel from '~/components/physical-science/accel.vue';
-import postime from '~/components/physical-science/position-time.1.vue';
-import postime2 from '~/components/physical-science/position-time.2.vue';
-import veltime from '~/components/physical-science/velocity-time.1.vue';
-import veltime2 from '~/components/physical-science/velocity-time.2.vue';
-import freefall from '~/components/physical-science/freefall.1.vue';
-import freefall2 from '~/components/physical-science/freefall.2.vue';
-import projmotion from '~/components/physical-science/projmotion.vue';
-import freebody from '~/components/physical-science/freebody.vue';
-import parallel from '~/components/physical-science/parallel.1.vue';
-import tempchange from '~/components/physical-science/tempchange.vue';
-import phasechange from '~/components/physical-science/phasechange.vue';
-import heatcurve from '~/components/physical-science/heatcurve.vue';
 import '~/plugins/types.ts';
 
 const units = {
-	unit: [unit],
-	accel: [accel],
-	postime: [postime, postime2],
-	veltime: [veltime, veltime2],
-	freefall: [freefall, freefall2],
-	projmotion: [projmotion],
-	freebody: [freebody],
-	parallel: [parallel],
-	tempchange: [tempchange],
-	phasechange: [phasechange],
-	heatcurve: [heatcurve],
+	unit: [() => import('~/components/physical-science/unit-conversions.vue')],
+	accel: [() => import('~/components/physical-science/accel.vue')],
+	postime: [
+		() => import('~/components/physical-science/position-time.1.vue'),
+		() => import('~/components/physical-science/position-time.2.vue'),
+	],
+	veltime: [
+		() => import('~/components/physical-science/velocity-time.1.vue'),
+		() => import('~/components/physical-science/velocity-time.2.vue'),
+	],
+	freefall: [
+		() => import('~/components/physical-science/freefall.1.vue'),
+		() => import('~/components/physical-science/freefall.2.vue'),
+	],
+	projmotion: [() => import('~/components/physical-science/projmotion.vue')],
+	freebody: [() => import('~/components/physical-science/freebody.vue')],
+	tempchange: [() => import('~/components/physical-science/tempchange.vue')],
+	phasechange: [() => import('~/components/physical-science/phasechange.vue')],
+	heatcurve: [() => import('~/components/physical-science/heatcurve.vue')],
 };
 
 @Component({
 	layout: 'study',
 })
 export default class Study extends Vue {
-	public currentComponent: VueComponent = empty;
+	public currentComponent: (() => Promise<VueComponent>) | VueComponent = empty;
 
 	public uniq = 0;
 

@@ -43,7 +43,11 @@ module.exports = {
   */
 	modules: [
 		// '~/modules/typescript.js',
-		'nuxt-typescript',
+		['nuxt-typescript', {
+			babel: {
+				plugins: ['@babel/plugin-syntax-dynamic-import'],
+			},
+		}],
 		['@nuxtjs/google-analytics', {
 			id: process.env.GA_ID || 'UA-000000-1',
 			debug: {
@@ -63,6 +67,9 @@ module.exports = {
 			}
 		},
 		transpile: [/^vue-awesome/],
+		babel: {
+			plugins: ['@babel/plugin-syntax-dynamic-import'],
+		},
 	},
 
 	generate: {
