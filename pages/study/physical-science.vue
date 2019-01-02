@@ -32,6 +32,7 @@
 									<el-checkbox
 										:indeterminate="unit.enabledTopics.length > 0 && unit.enabledTopics.length !== unit.topics.length"
 										:value="unit.enabledTopics.length === unit.topics.length"
+										class="checkbox"
 										@change="checked => checked ? unit.enabledTopics = unit.topics.map((topic) => topic.id)
 											: unit.enabledTopics = []"
 									>
@@ -40,7 +41,7 @@
 								</div>
 								<el-checkbox-group v-model="unit.enabledTopics">
 									<div v-for="topic in unit.topics" :key="topic.id" class="text item">
-										<el-checkbox :label="topic.id">{{ topic.name }}</el-checkbox>
+										<el-checkbox :label="topic.id" class="checkbox">{{ topic.name }}</el-checkbox>
 									</div>
 								</el-checkbox-group>
 							</el-card>
@@ -196,5 +197,9 @@ export default class Physci extends Vue {
 .text.item >>> span:last-child {
 	white-space: normal;
 	vertical-align: top;
+}
+
+.checkbox {
+	width: 100%;
 }
 </style>
