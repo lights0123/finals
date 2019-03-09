@@ -48,6 +48,7 @@ module.exports = {
 				sendHitTask: !!process.env.GA_ID,
 			},
 		}],
+		'modules/commit',
 	],
 
 	/*
