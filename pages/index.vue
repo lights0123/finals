@@ -9,7 +9,7 @@
 				<h1>Select A Course</h1>
 			</el-header>
 			<el-main class="main">
-				<el-row>
+				<el-row :gutter="10">
 					<el-col
 						v-for="course in courses"
 						:key="course.url"
@@ -37,12 +37,12 @@
 					<ul>
 						<li>
 							<a href="https://lights0123.com" target="_blank">
-								<icon class="icon" name="globe" /> My Website
+								<icon class="icon" name="globe" />My Website
 							</a>
 						</li>
 						<li>
 							<a href="https://github.com/lights0123" target="_blank">
-								<icon class="icon" name="brands/github" /> My GitHub
+								<icon class="icon" name="brands/github" />My GitHub
 							</a>
 						</li>
 					</ul>
@@ -64,7 +64,8 @@
 						</li>
 						<li>
 							<a href="https://github.com/lights0123/finals" target="_blank">
-								<icon class="icon" name="brands/github" /> This project is open source! Fork this on GitHub
+								<icon class="icon" name="brands/github" />
+								This project is open source! Fork this on GitHub
 							</a>
 						</li>
 					</ul>
@@ -78,7 +79,8 @@
 				>
 					<h3>About</h3>
 					<p>
-						This website is designed for studying for finals for various courses - right now, it only support Physical Science.
+						This website is designed for studying for finals for various courses -
+						right now, it only support Physical Science.
 					</p>
 				</el-col>
 			</el-footer>
@@ -100,7 +102,10 @@ import Icon from 'vue-awesome/components/Icon.vue';
 	},
 })
 export default class Index extends Vue {
-	public courses = [{ name: 'Physical Science - Physics', url: 'physical-science' }];
+	public courses = [
+		{ name: 'Physical Science - Physics', url: 'physical-science' },
+		{ name: 'Physical Science - Chemistry', url: 'physical-chem' },
+	];
 }
 </script>
 
