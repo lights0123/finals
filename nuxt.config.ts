@@ -42,12 +42,6 @@ module.exports = {
   ** Nuxt.js modules
   */
 	modules: [
-		// '~/modules/typescript.js',
-		['nuxt-typescript', {
-			babel: {
-				plugins: ['@babel/plugin-syntax-dynamic-import'],
-			},
-		}],
 		['@nuxtjs/google-analytics', {
 			id: process.env.GA_ID || 'UA-000000-1',
 			debug: {

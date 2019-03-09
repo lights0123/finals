@@ -5,12 +5,11 @@
   "author": "lights0123",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
@@ -21,8 +20,7 @@
     "element-ui": "^2.4.11",
     "lodash": "^4.17.11",
     "mathjs": "^5.4.0",
-    "mdn-polyfills": "^5.15.0",
-    "nuxt": "^2.3.4",
+    "nuxt-ts": "^2.4.5",
     "typeface-open-sans": "^0.0.54",
     "v-charts": "^1.19.0",
     "vue": "^2.5.21",
@@ -37,9 +35,6 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-vue": "^5.0.0",
-    "nuxt-typescript": "^0.11.0",
-    "ts-loader": "^5.3.2",
-    "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2"
   }
 }

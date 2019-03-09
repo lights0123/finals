@@ -54,7 +54,6 @@
 
 <script lang="ts">
 // TODO: fix rerender issue
-import 'mdn-polyfills/Array.prototype.includes';
 import { Component, Vue, Emit } from 'vue-property-decorator';
 import VeLine from 'v-charts/lib/line';
 import random from 'lodash/random';

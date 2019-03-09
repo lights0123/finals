@@ -17,7 +17,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Component as VueComponent } from 'vue';
 import sample from 'lodash/sample';
-import 'mdn-polyfills/Array.prototype.includes';
 import empty from '~/components/empty.vue';
 import '~/plugins/types.ts';
 

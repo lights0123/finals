@@ -57,7 +57,6 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import random from 'lodash/random';
-import 'mdn-polyfills/Object.entries';
 import answerCorrect from '~/components/answer-correct.vue';
 
 @Component({
