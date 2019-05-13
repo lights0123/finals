@@ -1,6 +1,6 @@
-const pkg = require('./package');
-
-module.exports = {
+import NuxtConfiguration from '@nuxt/config';
+import * as pkg from './package.json';
+const config: NuxtConfiguration = {
 	mode: 'universal',
 
 	/*
@@ -71,3 +71,4 @@ module.exports = {
 		dir: 'public',
 	},
 };
+export default config;

@@ -63,7 +63,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-// eslint-disable-next-line no-unused-vars
 import { Unit } from '~/components/Unit.ts';
 
 @Component({
@@ -98,6 +97,26 @@ export default class Physci extends Vue {
 			topics: [
 				// { name: 'Naming Ionic Compounds', id: 'ionicnaming' },
 				// { name: 'Naming Molecular Compounds', id: 'molecularnaming' },
+			],
+			enabledTopics: [],
+		},
+		{
+			num: 11,
+			name: 'Chemical Reactions',
+			topics: [
+				// { name: 'Percent Composition', id: 'percentcomp' },
+				{ name: 'Balancing Equations', id: 'balanceeq' },
+				{ name: 'Identifying Reactions', id: 'idreaction' },
+			],
+			enabledTopics: [],
+		},
+		{
+			num: 12,
+			name: 'Stoichiometry and Quantitative Analysis of Equations',
+			topics: [
+				// { name: 'Solubility', id: 'solubility' },
+				// { name: 'Stoichiometry Calculations', id: 'stoich' },
+				// { name: 'Limiting Reactants', id: 'limreact' },
 			],
 			enabledTopics: [],
 		},
