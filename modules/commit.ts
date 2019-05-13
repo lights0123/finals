@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-const fs = require('fs').promises;
+import fs from 'mz/fs';
 const { readFile } = fs;
 
 async function getHeadCommit() {

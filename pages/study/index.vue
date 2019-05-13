@@ -18,7 +18,6 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Component as VueComponent } from 'vue';
 import sample from 'lodash/sample';
 import empty from '~/components/empty.vue';
-import '~/plugins/types.ts';
 
 const units = {
 	unit: [() => import('~/components/physical-science/unit-conversions.vue')],
