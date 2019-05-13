@@ -19,10 +19,10 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class AnswerCorrect extends Vue {
 	@Prop(Boolean)
-	public correct: boolean;
+	public correct!: boolean;
 
 	@Prop(Boolean)
-	public incorrect: boolean;
+	public incorrect!: boolean;
 }
 </script>
 

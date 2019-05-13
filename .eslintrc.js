@@ -2,13 +2,14 @@ module.exports = {
 	root: true,
 	env: {
 		browser: true,
+		node: true,
 	},
 	parserOptions: {
-		parser: 'typescript-eslint-parser',
+		parser: '@typescript-eslint/parser',
 		sourceType: 'module',
 	},
-	extends: ['plugin:vue/recommended', 'airbnb-base'],
-	plugins: ['vue'],
+	extends: ['@nuxtjs', 'airbnb-base'],
+	plugins: ['@typescript-eslint'],
 	rules: {
 		'global-require': 0,
 		'import/no-unresolved': 0,

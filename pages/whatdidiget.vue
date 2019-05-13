@@ -11,13 +11,13 @@
 			<el-main class="main">
 				<el-form ref="form" :model="form" label-width="120px">
 					<el-form-item label="Year To Date">
-						<el-input-number v-model.number="form.ytd"/>
+						<el-input-number v-model.number="form.ytd" />
 					</el-form-item>
 					<el-form-item label="Quarter 1">
-						<el-input-number v-model.number="form.q1"/>
+						<el-input-number v-model.number="form.q1" />
 					</el-form-item>
 					<el-form-item label="Quarter 2">
-						<el-input-number v-model.number="form.q2"/>
+						<el-input-number v-model.number="form.q2" />
 					</el-form-item>
 				</el-form>
 
@@ -33,11 +33,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
-import "vue-awesome/icons/globe";
-import "vue-awesome/icons/brands/github";
-import "vue-awesome/icons/regular/copyright";
+import 'vue-awesome/icons/globe';
+import 'vue-awesome/icons/brands/github';
+import 'vue-awesome/icons/regular/copyright';
 
 @Component
 export default class Index extends Vue {

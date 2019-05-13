@@ -40,6 +40,8 @@ const units = {
 	tempchange: [() => import('~/components/physical-science/tempchange.vue')],
 	phasechange: [() => import('~/components/physical-science/phasechange.vue')],
 	heatcurve: [() => import('~/components/physical-science/heatcurve.vue')],
+	balanceeq: [() => import('~/components/chemistry/balanceeq.vue')],
+	idreaction: [() => import('~/components/chemistry/idreaction.vue')],
 };
 
 @Component({
@@ -70,7 +72,8 @@ export default class Study extends Vue {
 
 	get validTopics() {
 		if (!this.$route.query.topics) { return []; }
-		const topics: string[] =			typeof this.$route.query.topics === 'string'
+		// @ts-ignore
+		const topics: string[] = typeof this.$route.query.topics === 'string'
 			? [this.$route.query.topics]
 			: this.$route.query.topics;
 		const validTopics = Object.keys(units).filter(topic => topics.includes(topic));

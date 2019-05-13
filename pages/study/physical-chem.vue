@@ -6,7 +6,7 @@
 	<section class="container">
 		<el-container>
 			<el-header>
-				<h1>Physical Science - Physics</h1>
+				<h1>Physical Science - Chemistry</h1>
 			</el-header>
 			<el-main>
 				<el-button-group>
@@ -63,7 +63,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-// eslint-disable-next-line no-unused-vars
 import { Unit } from '~/components/Unit.ts';
 
 @Component({
@@ -72,72 +71,53 @@ import { Unit } from '~/components/Unit.ts';
 export default class Physci extends Vue {
 	public units: Unit[] = [
 		{
-			num: 1,
-			name: 'Introduction to Measurement and Nature of Science',
+			num: 8,
+			name: 'Atomic Structure & Theory',
 			topics: [
-				{ name: 'Unit Conversions & Sig Figs', id: 'unit' },
+				// { name: 'Electron Energy Levels', id: 'eleclevels' },
+				// { name: 'Photon Frequencies', id: 'photonfreq' },
+				// { name: 'Electron Configuration', id: 'elecconfig' },
+				// { name: 'Atomic Structure', id: 'atomstruct' },
 			],
 			enabledTopics: [],
 		},
 		{
-			num: 2,
-			name: 'Kinematics',
+			num: 9,
+			name: 'Classification of Matter & Periodic Trends',
 			topics: [
-				// { name: 'Distance, Time, & Velocity', id: 'disttimevel' },
-				{ name: 'Acceleration', id: 'accel' },
-				{ name: 'Position-Time Graphs', id: 'postime' },
-				{ name: 'Velocity-Time Graphs', id: 'veltime' },
-				{ name: 'Freefall', id: 'freefall' },
-				{ name: 'Projectile Motion', id: 'projmotion' },
+				// { name: 'Identifying Compounds', id: 'compoundident' },
+				// { name: 'Periodic Trends', id: 'periodtrends' },
+				// { name: 'Lewis Dot Structures', id: 'lewisstruct' },
 			],
 			enabledTopics: [],
 		},
 		{
-			num: 3,
-			name: 'Forces In Motion',
+			num: 10,
+			name: 'Chemical Bonding',
 			topics: [
-				{ name: 'Free Body Diagrams', id: 'freebody' },
-				// { name: 'Momentum', id: 'momentum' },
-				// { name: 'Impulse', id: 'impulse' },
-				// { name: 'Law of Gravitation', id: 'grav' },
+				// { name: 'Naming Ionic Compounds', id: 'ionicnaming' },
+				// { name: 'Naming Molecular Compounds', id: 'molecularnaming' },
 			],
 			enabledTopics: [],
 		},
 		{
-			num: 4,
-			name: 'Work, Power, and Conservation of Energy',
+			num: 11,
+			name: 'Chemical Reactions',
 			topics: [
-				// { name: 'Kinetic Energy', id: 'kinetic' },
-				// { name: 'Potential Energy', id: 'potential' },
-				// { name: 'Work', id: 'work' },
-				// { name: 'Power', id: 'power' },
+				// { name: 'Percent Composition', id: 'percentcomp' },
+				{ name: 'Balancing Equations', id: 'balanceeq' },
+				{ name: 'Identifying Reactions', id: 'idreaction' },
 			],
 			enabledTopics: [],
 		},
 		{
-			num: 5,
-			name: 'Electricity',
+			num: 12,
+			name: 'Stoichiometry and Quantitative Analysis of Equations',
 			topics: [
-				// { name: 'Ohm\'s Law', id: 'ohmlaw' },
-				// { name: 'Parallel Circuits', id: 'parallel' },
-				// { name: 'Series Circuits', id: 'series' },
+				// { name: 'Solubility', id: 'solubility' },
+				// { name: 'Stoichiometry Calculations', id: 'stoich' },
+				// { name: 'Limiting Reactants', id: 'limreact' },
 			],
-			enabledTopics: [],
-		},
-		{
-			num: 6,
-			name: 'Thermal Energy',
-			topics: [
-				{ name: 'Temperature Change (Q=mcΔT)', id: 'tempchange' },
-				{ name: 'Phase Change (Q=mL)', id: 'phasechange' },
-				{ name: 'Heating Curves', id: 'heatcurve' },
-			],
-			enabledTopics: [],
-		},
-		{
-			num: 7,
-			name: 'Waves, EMS, and Astronomy',
-			topics: [],
 			enabledTopics: [],
 		},
 	];
