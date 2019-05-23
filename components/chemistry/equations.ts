@@ -47,11 +47,11 @@ export const equations = [
 	},
 	{
 		input: [
-			{ required: 2, molecule: 'KNO3' },
-			{ required: 2, molecule: 'KNO2' },
+			{ required: 2, molecule: 'KClO3' },
 		],
 		out: [
-			{ required: 1, molecule: 'O2' },
+			{ required: 2, molecule: 'KCl' },
+			{ required: 3, molecule: 'O2' },
 		],
 		type: EquationType.Decomposition,
 	},
