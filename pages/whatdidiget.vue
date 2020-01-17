@@ -23,7 +23,7 @@
 
 				You got {{ final }}% on the final!
 
-				<p v-if="final === form.ytd">
+				<p v-if="diff < 0.03">
 					Your final may not have been entered, or it may
 					be the same as your previous YTD.
 				</p>
@@ -50,6 +50,10 @@ export default class Index extends Vue {
 	get final() {
 		return this.form.ytd * 5 - this.form.q1 * 2 - this.form.q2 * 2;
 	}
+  
+  get diff() {
+  	return Math.abs(this.final - this.form.ytd);
+  }
 }
 </script>
 
